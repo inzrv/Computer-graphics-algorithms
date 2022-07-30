@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="utf-8" />
+	<title>Яркость, контраст</title>
+
+</head>
+
+<body>
+
+<div class = "center">
+	<h2 text-align = "center">Яркость, контраст</h2>
+	<ol>
+		<li>Нажмите на кнопку «Загрузить изображение», чтобы загрузить изображение</li>
+		<br>
+		<li>Выберите с помощью ползунка значения яркости и контрастности</li>
+		<br>
+		<li>Сравните оригинальное и обработанное изображение, обратите внимание на гистограмму</li>
+	  </ol>
+	
+	<div class = "ib">
+		<canvas id = "original_canvas" class = "cc1 canBor"  height = "300"></canvas>
+		<div class="slidecontainer">
+			<button onclick= "initialize()">Загрузить изображение</button>
+		</div>
+	</div>
+	
+	<div class = "ib">
+		<canvas id = "result_canvas" class = "cc1 canBor" height = "300"></canvas>
+		
+		<div class="slidecontainer">
+			<input type="range" min="-255" max="256" value="0" id="brightness_sldr" class = "slider">
+			<p>Яркость =  <b id="bright_val"></b></p>
+		</div>
+
+		<div class="slidecontainer">
+			<input type="range" min="-255" max="256" value="0" id="contrast_sldr" class = "slider">
+			<p>Контраст = <b id="contrast_val"></b></p>
+		</div>
+	</div>
+	
+	<br>
+
+	<div class = "ib">
+		<canvas id = "gray_canvas" class = "cc1" height = "300"></canvas>
+		<p>Обработанное grayscale изображение </p>
+	</div>
+
+	<div class = "ib">
+		<canvas id = "h_canvas" class = "cc2"></canvas>
+		<p>Гистограмма обработанного изображения</p>
+	</div>
+
+</div>	
+
+<script src = "scripts.js"></script>
+</body>
+
+</html>
