@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Кривая Безье. Назаров</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="bezier.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+
+            var initialPoints = [];
+            var c = 0;
+
+            function get_new_point(){
+              var canvas =  document.getElementById("c1");
+              var ctx = canvas.getContext("2d");
+              if (c == 0) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+              }
+              var rect = canvas.getBoundingClientRect();
+              var x = event.clientX - rect.left;
+              var y = event.clientY - rect.top;
+              initialPoints.push([x, y]);
+              ctx.strokeStyle = "rgb(0, 0,0)";
+              ctx.strokeRect(x, y, 2, 2);
+              c++;
+              if (c == 4) {
+                ctx.bezier(initialPoints);
+                initialPoints = [];
+                c = 0;
+              }
+            }
+
+
+
+        </script>
+    </head>
+    <body>
+        <h1>Кривая Безье</h1>
+        <canvas onclick="get_new_point()" style="border: 1px solid gray;" id="c1" width="800" height="600"></canvas>
+    </body>
+</html>
