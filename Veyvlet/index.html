@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8" />
+	<title>Вейвлет Хаара</title>
+</head>
+
+<body>
+
+<div class = "center">
+	<h2>Вейвлет Хаара</h2>
+	<ol>
+		<li>Нажмите на кнопку загрузить изображение», чтобы загрузить изображение</li>
+		<br>
+		<li>Выберите с помощью ползунка значение порога отсечения</li>
+		<br>
+		<li>Сравните оригинальное и обработанное изображеие</li>
+	  </ol>
+	
+	
+	<div class = "ib">
+		<canvas id = "origial_canvas" class = "cc1"  height = "300"></canvas>
+		<div class="slidecontainer">
+			<button onclick= "initialize()">Загрузить изображение</button>
+		</div>
+	</div>
+	
+	<div class = "ib">
+		<canvas id = "haar_canvas" class = "cc1" height = "300"></canvas>
+		<div class="slidecontainer">
+			<input type="range" min="1" max="128" value="1" id="lim_sldr">
+			<p>Порог отсечения = <b id="limit_val"></b></p>
+		</div>
+	</div>
+	
+	<div class = "ib">
+		<canvas id = "result_canvas" class = "cc1" height = "300"></canvas>	
+		<p>Обработанное изображение</p>	
+	</div>
+</div>	
+	
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
